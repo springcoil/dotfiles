@@ -225,3 +225,8 @@ fi
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+
+export PATH=$PATH:/home/peadar/domino #added by domino
+
+# added by Anaconda 2.1.0 installer
+export PATH="/home/peadar/anaconda/bin:$PATH"
