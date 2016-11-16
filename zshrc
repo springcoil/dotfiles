@@ -1,4 +1,3 @@
-# Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -8,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -48,28 +47,24 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(jump git virtualenvwrapper sublime ackgrep)
+plugins=(jump git rails ruby ackgrep)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/usr/local/pgsql/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/peadar/.rvm/bin:$PATH"
+export PATH="$HOME/anaconda/bin:/usr/local/heroku/bin:/usr/local/pgsql/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/peadar/.rvm/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
-export VIRTUALENVWRAPPER_PYTHON=`which python`
-export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-source `which virtualenvwrapper.sh`
- #added by Anaconda 1.9.2 installer
 # export PATH="/home/peadar/anaconda/bin:$PATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ #Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+	export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -80,10 +75,9 @@ if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline
     source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
 fi
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
+alias jup="jupyter-notebook"
 alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push origin HEAD'
@@ -116,7 +110,7 @@ nosetests()
 	 /Library/Frameworks/Python.framework/Versions/3.3/bin/nosetests-3.3 $1
  }
 alias sublf="subl . &"
-
-# added by Anaconda 2.1.0 installer
-export PATH="/home/peadar/anaconda/bin:$PATH"
-
+export PATH="/Users/pcoyle/anaconda3/bin:$PATH"
+export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+export PATH=$PATH:$HOME/bin
+export EDITOR='vim'
